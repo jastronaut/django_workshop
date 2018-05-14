@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block pageheader %}
+Add a TV Show
+{% endblock %}
+
+{% block tvlistcontent %}
+
+<form action="" method="POST">
+	{% csrf_token %}
+	{% for field in form %}
+	<p>{{ field.label_tag }} {{ field }}</p>
+	{% endfor %}
+	<input type="submit" value="Submit" / >
+</form>
+
+{% endblock %}

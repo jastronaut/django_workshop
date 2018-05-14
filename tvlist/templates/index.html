@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block pageheader %}
+TV Show List
+{% endblock %}
+
+{% block tvlistcontent %}
+<h3>TV Shows</h3>
+	<p>We currently have {{ numTVShows }} TV Shows in the database!</p>
+
+	<hr>
+	{% for item in tvList %}
+	<h4> {{ item.title }} </h4>
+	<p class="in">{{ item.watchedSeasons }} seasons watched out of {{ item.seasons }} seasons</p>
+	{% if item.inProgress %}
+	<p class="in">Currently watching</p>
+	{% endif %}
+	<hr>
+	{% endfor %}
+
+	<a href="{% url 'enter_tvshow' %}" class="pagebutt">hello</a>
+
+{% endblock %} 
